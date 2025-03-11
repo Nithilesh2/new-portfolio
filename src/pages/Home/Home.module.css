@@ -1,0 +1,130 @@
+.main {
+  background-color: #0d0d0d;
+  font-family: "Share Tech Mono", monospace;
+  padding: 3rem;
+  height: 100%;
+  width: 100%;
+  background: none;
+  color: #ccc;
+}
+.sectionOne {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  margin-left: 2rem;
+}
+.content{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.3s linear;
+}
+.buttonContainer{
+  display: flex;
+  width: 100%;
+}
+.button{
+  border: 2px solid #00ff00;
+  padding: 0.5rem 1rem;
+  color: #ccc;
+  border-radius: 3px;
+  font-size: 0.9rem;
+}
+.left {
+  height: 100%;
+  width: 60%;
+}
+.right {
+  height: 100%;
+  width: 35%;
+}
+.paraOne {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ff00;
+  text-shadow: 0 0 3px #00ff00;
+  margin-bottom: 1rem;
+}
+.paraTwo {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  max-width: 800px;
+  padding: 0px 10px 10px 0;
+  margin-bottom: 1rem;
+}
+.paraThree {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 800px;
+  padding: 0px 10px 10px 0;
+  opacity: 0.9;
+}
+.highlight {
+  color: #00ff00;
+  font-weight: bold;
+}
+.glitchImg {
+  background-image: url("../../assets/glitchImage-removebg-preview.png");
+  width: 350px;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: glitch 3.5s infinite steps(1);
+}
+@keyframes glitch {
+  0%,
+  100% {
+    background-image: url("../../assets/glitchImage-removebg-preview.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  92.5% {
+    background-image: url("../../assets/glitch1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+  95% {
+    background-image: url("../../assets/glitch2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+  }
+  97.5% {
+    background-image: url("../../assets/glitch3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 800px) {
+  .sectionOne{
+    margin-left: 0;
+    align-items: center;
+  }
+  .content{
+    flex-direction: column;
+  }
+  .left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .right{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttonContainer{
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 370px) {
+  .left{
+    width: 90%;
+  }
+}

@@ -1,0 +1,144 @@
+.main {
+  height: 75px;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1rem;
+  user-select: none;
+  justify-content: space-between;
+  padding: 0 2rem;
+  font-family: "Major Mono Display", monospace;
+}
+.left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  position: relative;
+  font-size: 1.5rem;
+  transition: all 0.3s linear;
+  color: #4bff4b;
+}
+.left::before,
+.left::after {
+  position: absolute;
+  left: 0;
+  opacity: 0.8;
+  animation: nameGlitch 7s infinite;
+}
+.left::before {
+  content: "<Nithilesh/>";
+}
+.left::after {
+  content: "<Nithilesh/>";
+}
+@keyframes nameGlitch {
+  0%,
+  25% {
+    content: "<Nithilesh/>";
+  }
+  26%,
+  50% {
+    content: "<N_t_ile_h/>";
+  }
+  51%,
+  65% {
+    content: "<Nit_i_esh/>";
+  }
+  66%,
+  75% {
+    content: "<_it_ile_h/>";
+  }
+  76%,
+  85% {
+    content: "<N_t_il_sh/>";
+  }
+  86%,
+  100% {
+    content: "<Nithilesh/>";
+  }
+}
+.left::before {
+  animation: nameGlitch 7s infinite;
+}
+.left::after {
+  animation: nameGlitch 7s infinite;
+}
+.right {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  list-style: none;
+  transition: all 0.3s linear;
+}
+.navData {
+  cursor: pointer;
+  transition: all 0.2s linear;
+  background: none;
+}
+.navData:hover {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+  filter: drop-shadow(5px 0px 15px #00ff00) drop-shadow(-5px 0px 15px #00ff00);
+}
+.hamburger {
+  display: none;
+  background: transparent;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  color: #00ff00;
+  padding: 5px 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.hamburger:hover {
+  background: #00ff00;
+  color: black;
+}
+@media screen and (max-width: 868px) {
+  .main {
+    position: relative;
+    z-index: 9;
+    height: 100%;
+    margin-top: 10px;
+  }
+  .hamburger {
+    display: block;
+  }
+  .right {
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    width: 100%;
+    background: #1e1e1e;
+    flex-direction: column;
+    padding: 20px 0;
+    height: 100dvh;
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  .right.open {
+    display: flex;
+    top: 0;
+    opacity: 1;
+    z-index: -1;
+  }
+  .navData {
+    cursor: default;
+  }
+  .hamburger:hover {
+    background: transparent;
+    color: #00ff00;
+  }
+}
+@media screen and (max-width: 368px) {
+  .left {
+    margin-left: 0;
+  }
+}
