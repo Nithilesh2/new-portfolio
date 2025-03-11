@@ -1,0 +1,22 @@
+.goToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #1e1e1e;
+  border: 2px solid #ccc;
+  padding: 12px 15px;
+  cursor: default;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+.glitchText {
+  font-weight: bold;
+  color: #ccc;
+}
