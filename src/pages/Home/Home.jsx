@@ -1,7 +1,7 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styles from "./Home.module.css"
 import Navbar from "../../components/Navbar/Navbar"
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
+import { FaGithub, FaInstagram, FaLinkedin, FaStar } from "react-icons/fa"
 import ProjectBox from "../../components/ProjectBox/ProjectBox"
 import portfolioImg from "../../assets/protfolioImg.png"
 import budgetTrackerImg from "../../assets/budgetTrackerImg.png"
@@ -11,6 +11,8 @@ import budgetTrackerMobile3 from "../../assets/budgetTrackerMobile2.jpg"
 import GoToTop from "../../components/GoToTop/GoToTop"
 import SkillsBox from "../../components/SkillsBox/SkillsBox"
 import Footer from "../../components/Footer/Footer"
+import AboutWork from "../../components/AboutWork/AboutWork"
+import { useLocation, useNavigate } from "react-router-dom"
 
 const Home = () => {
   const handleOpen = (link) => {
@@ -18,6 +20,19 @@ const Home = () => {
       window.open(link, "_blank")
     }
   }
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        const section = document.getElementById(location.state.scrollTo)
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" })
+        }
+      }, 100)
+    }
+  }, [location])
   return (
     <>
       <div className={styles.social}>
@@ -47,7 +62,7 @@ const Home = () => {
       </div>
       <Navbar />
       <div className={styles.main}>
-        <section className={styles.sectionOne}>
+        <section id="home" className={styles.sectionOne}>
           <div className={styles.content}>
             <span className={styles.left}>
               <h3 className={styles.paraOne}>WhoAmI</h3>
@@ -80,11 +95,19 @@ const Home = () => {
           </div>
         </section>
 
-        <section className={styles.sectionTwo}>
+        <section id="projects" className={styles.sectionTwo}>
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}># Projects</h3>
-              <div className={styles.viewAll}>view all ~~&gt;</div>
+              <div
+                className={styles.viewAll}
+                onClick={() => navigate("/view-projects")}
+                style={{
+                  cursor: "default",
+                }}
+              >
+                view all ~~&gt;
+              </div>
             </span>
           </div>
           <div className={styles.projects}>
@@ -131,7 +154,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className={styles.sectionThree}>
+        <section id="skills" className={styles.sectionThree}>
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}># Skills</h3>
@@ -179,7 +202,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section className={styles.sectionFour}>
+        <section id="aboutMe" className={styles.sectionFour}>
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}># About me</h3>
@@ -290,12 +313,49 @@ const Home = () => {
           </div>
         </section>
 
-        <section className={styles.sectionFive}>
+        <section id="communtiy" className={styles.sectionFour}>
+          <div className={styles.content}>
+            <span className={styles.sectionTwoTop}>
+              <h3 className={styles.sectionTwoParaOne}>
+                # Community & Network
+              </h3>
+            </span>
+          </div>
+          <div className={styles.sectionSixBottom}>
+            <AboutWork
+              icon={FaGithub}
+              title={2}
+              description="GitHub Followers"
+            />
+            <AboutWork
+              icon={FaStar}
+              title={50}
+              description="GitHub Repositories"
+            />
+            <AboutWork
+              icon={FaLinkedin}
+              title={1400}
+              description="LinkedIn Impressions"
+            />
+            <AboutWork
+              icon={FaLinkedin}
+              title={175}
+              description="LinkedIn Connections"
+            />
+            <AboutWork
+              icon={FaInstagram}
+              title={300}
+              description="Instagram Followers"
+            />
+          </div>
+        </section>
+
+        <section id="contact" className={styles.sectionFive}>
           <div
             className={styles.content}
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <span className={styles.sectionTwoTop}>
+            <span className={styles.sectionTwoTop} style={{ marginLeft: "0" }}>
               <h3 className={styles.sectionTwoParaOne}># Contact</h3>
             </span>
 

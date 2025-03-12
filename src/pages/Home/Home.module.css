@@ -342,6 +342,7 @@
   font-size: 1.2rem;
   margin-bottom: 2rem;
   width: 50%;
+  padding-left: 3rem;
 }
 .contactForm {
   display: flex;
@@ -378,6 +379,13 @@
 .contactForm button:hover {
   background: #ccc;
   color: #1e1e1e;
+}
+.sectionSixBottom {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem 0 0 3rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -430,10 +438,23 @@
   .mail {
     right: -95px;
   }
+  .sectionSixBottom {
+    justify-content: center;
+    padding-left: 0;
+  }
+  .sectionTwoTop {
+    margin-left: 0;
+  }
+  .academicsContainer,
+  .webDevelopmentContainer,
+  .appDevelopmentContainer,
+  .funFactsContainer {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 460px) {
   .left {
-    width: 90%;
+    width: 100%;
     font-size: 1rem;
   }
   .content {
@@ -478,16 +499,30 @@
   }
   .sectionFourBottom {
     margin-left: 0;
+    justify-items: flex-start;
+    width: 100%;
   }
   .contactFormInputs {
     flex-direction: column;
   }
   .contactForm {
     max-width: 350px;
-    width: 90%;
+    width: 95%;
   }
   .contactForm button:hover {
     background: #1e1e1e;
     color: #ccc;
+  }
+  .contactDescription{
+    width: 95%;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .academicsContainer,
+  .webDevelopmentContainer,
+  .appDevelopmentContainer,
+  .funFactsContainer {
+    width: 90%;
   }
 }

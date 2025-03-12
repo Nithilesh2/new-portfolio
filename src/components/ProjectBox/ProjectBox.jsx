@@ -46,16 +46,23 @@ const ProjectBox = ({
       <div className={styles.projectDescription}>{description}</div>
 
       <div className={styles.buttonContainer}>
-        {websiteUrl && (
-          <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
-            <button className={styles.button}>Live</button>
-          </a>
-        )}
-
-        {githubCode && (
-          <a href={githubCode} target="_blank" rel="noopener noreferrer">
-            <button className={styles.button}>&lt; Code /&gt;</button>
-          </a>
+        {websiteUrl || githubCode ? (
+          <>
+            {websiteUrl && (
+              <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+                <button className={styles.button}>Live</button>
+              </a>
+            )}
+            {githubCode && (
+              <a href={githubCode} target="_blank" rel="noopener noreferrer">
+                <button className={styles.button}>&lt; Code /&gt;</button>
+              </a>
+            )}
+          </>
+        ) : (
+          <p className={styles.restrictedMessage}>
+            Access to this project is restricted.
+          </p>
         )}
       </div>
     </div>
