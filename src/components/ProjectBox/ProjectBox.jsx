@@ -40,7 +40,16 @@ const ProjectBox = ({
             loading="lazy"
           />
         ) : (
-          "No preview available"
+          <div
+            className={styles.image}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            No preview available
+          </div>
         )}
         {img2 && (
           <img
