@@ -3,6 +3,7 @@ import emailjs from "emailjs-com"
 import styles from "./Home.module.css"
 import Navbar from "../../components/Navbar/Navbar"
 import { FaGithub, FaInstagram, FaLinkedin, FaStar } from "react-icons/fa"
+import { Database, Wrench, Code, Cloud, Monitor, Languages } from "lucide-react"
 import ProjectBox from "../../components/ProjectBox/ProjectBox"
 import portfolioImg from "../../assets/protfolioImg.png"
 import budgetTrackerImg from "../../assets/budgetTrackerImg.png"
@@ -69,6 +70,13 @@ const Home = () => {
       )
   }
 
+  const goToSection = (id) => {
+    const section = document.getElementById(id)
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
   return (
     <>
       <div className={styles.social}>
@@ -132,7 +140,11 @@ const Home = () => {
             </span>
           </div>
           <div className={styles.buttonContainer}>
-            <button type="button" className={styles.button}>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={() => goToSection("contact")}
+            >
               # Contact me !
             </button>
           </div>
@@ -214,7 +226,7 @@ const Home = () => {
         >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
-              <h3 className={styles.sectionTwoParaOne}># Skills</h3>
+              <h3 className={styles.sectionTwoParaOne}># Tech Stack</h3>
             </span>
           </div>
           <div className={styles.sectionThreeBottom}>
@@ -236,23 +248,32 @@ const Home = () => {
             <div className={styles.sectionThreeRight}>
               <SkillsBox
                 title="Databases"
+                icon={<Database />}
                 skills={["MongoDB", "MySQL", "Firebase"]}
               />
-              <SkillsBox title="Tools" skills={["Git", "Postman", "Figma"]} />
+              <SkillsBox
+                title="Tools"
+                icon={<Wrench />}
+                skills={["Git", "Postman", "Figma"]}
+              />
               <SkillsBox
                 title="Technologies"
+                icon={<Code />}
                 skills={["React.js", "React Native", "Node.js", "Expo"]}
               />
               <SkillsBox
                 title="Cloud Services"
+                icon={<Cloud />}
                 skills={["Firebase", "Vercel", "Netlify"]}
               />
               <SkillsBox
                 title="Operating Systems"
+                icon={<Monitor />}
                 skills={["Windows", "Linux", "MacOS"]}
               />
               <SkillsBox
                 title="Languages"
+                icon={<Languages />}
                 skills={["JavaScript", "Python", "C", "Java", "HTML", "CSS"]}
               />
             </div>
@@ -289,16 +310,6 @@ const Home = () => {
                 <strong> IARE College</strong>, Dundigal, Hyderabad, Telangana
                 (2021 - 2025).
               </p>
-              <p>
-                I completed my <strong>Intermediate (MPC)</strong> from{" "}
-                <strong>Impulse Jr. College</strong>, Pragathi Nagar, Hyderabad,
-                Telangana (2020 - 2021).
-              </p>
-              <p>
-                My schooling was from{" "}
-                <strong>Sri Siddhartha High School</strong>, Siddipet,
-                Telangana.
-              </p>
             </div>
 
             <div className={styles.webDevelopmentContainer}>
@@ -309,12 +320,9 @@ const Home = () => {
                 Web Development
               </h4>
               <p>
-                I’m a passionate web developer with hands-on experience in
-                frontend development. I’ve worked on projects like building an
-                E-commerce website and designing custom admin panels, where I
-                applied my skills to create efficient and user-friendly
-                solutions. I’m always eager to explore new technologies and
-                enhance my expertise in web development.
+                I'm a passionate web developer who loves crafting user-friendly
+                experiences. I've built E-commerce sites and custom admin
+                panels.
               </p>
             </div>
 
@@ -326,12 +334,9 @@ const Home = () => {
                 App Development
               </h4>
               <p>
-                Passionate about app development, with expertise in React Native
-                for cross-platform apps and experience using VS Code for native
-                Android development. I enjoy building efficient and
-                user-friendly applications while staying updated with the latest
-                trends in mobile development. Always eager to learn and improve
-                my skills in this ever-evolving field.
+                I love building mobile apps with React Native and Android
+                development in VS Code. I focus on efficiency, user experience,
+                and constantly learning the latest trends.
               </p>
             </div>
 
@@ -345,12 +350,7 @@ const Home = () => {
               <ul>
                 <li>Chai (tea) is my go-to drink.</li>
                 <li>I enjoy drawing and sketching in my free time.</li>
-                <li>When it comes to cooking, Pulihora is my specialty.</li>
                 <li>Not really a dog or cat person—just neutral.</li>
-                <li>
-                  I don’t follow sports, but I love watching sci-fi and Marvel
-                  movies.
-                </li>
               </ul>
             </div>
           </div>

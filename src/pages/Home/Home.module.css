@@ -94,13 +94,20 @@
   width: 100%;
 }
 .button {
-  border: 2px solid #00ff00;
+  border: 2px solid #ccc;
   height: 40px;
   width: 150px;
   color: #ccc;
   border-radius: 3px;
   font-size: 1rem;
+  font-weight: 600;
   background: transparent;
+  transition: all 0.3s linear;
+}
+.button:hover{
+  background: #ccc;
+  color: #1e1e1e;
+  border: 2px solid #1e1e1e;
 }
 .left {
   height: 100%;
