@@ -14,6 +14,7 @@ import GoToTop from "../../components/GoToTop/GoToTop"
 import SkillsBox from "../../components/SkillsBox/SkillsBox"
 import Footer from "../../components/Footer/Footer"
 import AboutWork from "../../components/AboutWork/AboutWork"
+// import { PiLightbulbBold } from "react-icons/pi"
 import { useLocation, useNavigate } from "react-router-dom"
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion"
@@ -102,6 +103,14 @@ const Home = () => {
               }
             />
           </div>
+          {/* <div className={styles.socialMedia4}>
+            <PiLightbulbBold
+              size={26}
+              onClick={() =>
+                handleOpen("https://www.instagram.com/_nithilesh_guptha_/")
+              }
+            />
+          </div> */}
         </div>
       </div>
       <Navbar />
@@ -211,7 +220,7 @@ const Home = () => {
                 "Chart Kit",
               ]}
               githubCode="https://github.com/Nithilesh2/rn-budget-tracker"
-              websiteUrl=""
+              websiteUrl="https://drive.google.com/file/d/1wUkoc5UiFE14iJZGHvqewhS41OdhKxor/view?usp=drive_link"
             />
           </div>
         </motion.section>

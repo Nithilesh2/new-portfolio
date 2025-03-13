@@ -41,7 +41,8 @@
 }
 .socialMedia1,
 .socialMedia2,
-.socialMedia3 {
+.socialMedia3,
+.socialMedia4 {
   position: absolute;
   bottom: -15px;
   left: 5px;
@@ -75,6 +76,10 @@
   background-color: #ccc;
   color: #0d0d0d;
 }
+/* .socialMedia4{
+  bottom: -120px;
+  rotate: 180deg;
+} */
 .sectionOne {
   display: flex;
   flex-direction: column;
@@ -104,7 +109,7 @@
   background: transparent;
   transition: all 0.3s linear;
 }
-.button:hover{
+.button:hover {
   background: #ccc;
   color: #1e1e1e;
   border: 2px solid #1e1e1e;
@@ -520,7 +525,7 @@
     background: #1e1e1e;
     color: #ccc;
   }
-  .contactDescription{
+  .contactDescription {
     width: 95%;
     padding-left: 0;
   }

@@ -171,7 +171,7 @@ const Projects = () => {
                 "Chart Kit",
               ]}
               githubCode="https://github.com/Nithilesh2/rn-budget-tracker"
-              websiteUrl="https://drive.google.com/file/d/1NzFRzSZCkdUnumpmYBflrUoUp_aL7u66/view?usp=sharing"
+              websiteUrl="https://drive.google.com/file/d/1wUkoc5UiFE14iJZGHvqewhS41OdhKxor/view?usp=drive_link"
             />
             <ProjectBox
               img="nodata"
