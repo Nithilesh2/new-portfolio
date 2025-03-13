@@ -15,8 +15,8 @@ import tempconverter from "../../assets/temperatureconverter.png"
 import calculator from "../../assets/calculator.png"
 import budgetTrackerMobile from "../../assets/budgetTrackerMobile.jpg"
 import budgetTrackerMobile3 from "../../assets/budgetTrackerMobile2.jpg"
-import groceriesMobile from "../../assets/groceriesMobile1.jpg"
-import groceriesMobile1 from "../../assets/groceriesMobile2.jpg"
+// import groceriesMobile from "../../assets/groceriesMobile1.jpg"
+// import groceriesMobile1 from "../../assets/groceriesMobile2.jpg"
 import GoToTop from "../../components/GoToTop/GoToTop"
 
 const Projects = () => {
@@ -176,8 +176,10 @@ const Projects = () => {
               websiteUrl="https://drive.google.com/file/d/1NzFRzSZCkdUnumpmYBflrUoUp_aL7u66/view?usp=sharing"
             />
             <ProjectBox
-              img={groceriesMobile}
-              img3={groceriesMobile1}
+              // img={groceriesMobile}
+              // img3={groceriesMobile1}
+              img="nodata"
+              img3="nodata"
               title="Groceries App"
               description="A mobile application for ordering groceries with a seamless user experience, navigation, and animations."
               technologies={[

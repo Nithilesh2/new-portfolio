@@ -1,4 +1,5 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef, useState } from "react"
+import emailjs from "emailjs-com"
 import styles from "./Home.module.css"
 import Navbar from "../../components/Navbar/Navbar"
 import { FaGithub, FaInstagram, FaLinkedin, FaStar } from "react-icons/fa"
@@ -13,8 +14,11 @@ import SkillsBox from "../../components/SkillsBox/SkillsBox"
 import Footer from "../../components/Footer/Footer"
 import AboutWork from "../../components/AboutWork/AboutWork"
 import { useLocation, useNavigate } from "react-router-dom"
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion"
 
 const Home = () => {
+  const [isSent, setIsSent] = useState(false)
   const handleOpen = (link) => {
     if (link) {
       window.open(link, "_blank")
@@ -22,6 +26,12 @@ const Home = () => {
   }
   const navigate = useNavigate()
   const location = useLocation()
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }, 100)
+  }, [location.pathname])
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -33,6 +43,32 @@ const Home = () => {
       }, 100)
     }
   }, [location])
+
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    setIsSent(true)
+
+    emailjs
+      .sendForm(
+        "service_anvnrzp",
+        "template_d0h60jh",
+        form.current,
+        "PixE8S-7pHeZ6vNBj"
+      )
+      .then(
+        () => {
+          setIsSent(false)
+          e.target.reset()
+        },
+        (error) => {
+          setIsSent(false)
+          console.error("Email send error:", error.text)
+        }
+      )
+  }
+
   return (
     <>
       <div className={styles.social}>
@@ -62,7 +98,14 @@ const Home = () => {
       </div>
       <Navbar />
       <div className={styles.main}>
-        <section id="home" className={styles.sectionOne}>
+        <motion.section
+          id="home"
+          className={styles.sectionOne}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: false }}
+        >
           <div className={styles.content}>
             <span className={styles.left}>
               <h3 className={styles.paraOne}>WhoAmI</h3>
@@ -93,9 +136,16 @@ const Home = () => {
               # Contact me !
             </button>
           </div>
-        </section>
+        </motion.section>
 
-        <section id="projects" className={styles.sectionTwo}>
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4 }}
+          viewport={{ once: false }}
+          id="projects"
+          className={styles.sectionTwo}
+        >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}># Projects</h3>
@@ -152,9 +202,16 @@ const Home = () => {
               websiteUrl=""
             />
           </div>
-        </section>
+        </motion.section>
 
-        <section id="skills" className={styles.sectionThree}>
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4 }}
+          viewport={{ once: false }}
+          id="skills"
+          className={styles.sectionThree}
+        >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}># Skills</h3>
@@ -200,9 +257,16 @@ const Home = () => {
               />
             </div>
           </div>
-        </section>
+        </motion.section>
 
-        <section id="aboutMe" className={styles.sectionFour}>
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4 }}
+          viewport={{ once: false }}
+          id="aboutMe"
+          className={styles.sectionFour}
+        >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}># About me</h3>
@@ -252,16 +316,6 @@ const Home = () => {
                 solutions. I’m always eager to explore new technologies and
                 enhance my expertise in web development.
               </p>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "1rem",
-                }}
-              >
-                <button className={styles.viewProjects}>View Projects</button>
-              </div>
             </div>
 
             <div className={styles.appDevelopmentContainer}>
@@ -279,17 +333,6 @@ const Home = () => {
                 trends in mobile development. Always eager to learn and improve
                 my skills in this ever-evolving field.
               </p>
-
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "1rem",
-                }}
-              >
-                <button className={styles.viewProjects}>View Projects</button>
-              </div>
             </div>
 
             <div className={styles.funFactsContainer}>
@@ -311,9 +354,16 @@ const Home = () => {
               </ul>
             </div>
           </div>
-        </section>
+        </motion.section>
 
-        <section id="communtiy" className={styles.sectionFour}>
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4 }}
+          viewport={{ once: false }}
+          id="communtiy"
+          className={styles.sectionFour}
+        >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
               <h3 className={styles.sectionTwoParaOne}>
@@ -348,9 +398,16 @@ const Home = () => {
               description="Instagram Followers"
             />
           </div>
-        </section>
+        </motion.section>
 
-        <section id="contact" className={styles.sectionFive}>
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.4 }}
+          viewport={{ once: false }}
+          id="contact"
+          className={styles.sectionFive}
+        >
           <div
             className={styles.content}
             style={{ display: "flex", flexDirection: "column" }}
@@ -365,21 +422,38 @@ const Home = () => {
                 other request or question, don’t hesitate to contact me
               </p>
 
-              <form className={styles.contactForm}>
+              <form
+                ref={form}
+                className={styles.contactForm}
+                onSubmit={sendEmail}
+              >
                 <div className={styles.contactFormInputs}>
-                  <input type="text" placeholder="Your Name" required />
-                  <input type="email" placeholder="Your Email" required />
+                  <input
+                    type="text"
+                    name="user_name"
+                    placeholder="Your Name"
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="user_email"
+                    placeholder="Your Email"
+                    required
+                  />
                 </div>
                 <textarea
                   placeholder="Your Message"
                   rows="4"
                   required
+                  name="message"
                 ></textarea>
-                <button type="submit">Send Message</button>
+                <button type="submit">
+                  {isSent ? "Sending Message..." : "Send Message"}
+                </button>
               </form>
             </div>
           </div>
-        </section>
+        </motion.section>
 
         <Footer />
       </div>

@@ -1,5 +1,7 @@
 import React from "react"
 import styles from "./ProjectBox.module.css"
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion"
 
 const ProjectBox = ({
   img,
@@ -12,28 +14,50 @@ const ProjectBox = ({
   websiteUrl,
 }) => {
   return (
-    <div className={styles.main}>
+    <motion.div
+      whileHover={{
+        scale: 1.15,
+        backdropFilter: "blur(10px)",
+        zIndex: 9,
+        boxShadow: "10px 10px 20px rgba(255, 255, 255, 0.23)",
+      }}
+      initial={{
+        scale: 1,
+        backdropFilter: "none",
+        zIndex: 0,
+        boxShadow: "none",
+      }}
+      transition={{ duration: 0.4 }}
+      className={styles.main}
+    >
       <div className={styles.imgContainer}>
-        <img
-          src={img}
-          alt="project"
-          className={styles.image}
-          draggable={false}
-        />
+        {img !== "nodata" ? (
+          <img
+            src={img}
+            alt="project"
+            className={styles.image}
+            draggable={false}
+            loading="lazy"
+          />
+        ) : (
+          "No preview available"
+        )}
         {img2 && (
           <img
             src={img2}
             alt="project"
             className={styles.image}
             draggable={false}
+            loading="lazy"
           />
         )}
         {img3 && (
           <img
             src={img3}
-            alt="project"
+            alt="preview"
             className={styles.image}
             draggable={false}
+            loading="lazy"
           />
         )}
       </div>
@@ -65,7 +89,7 @@ const ProjectBox = ({
           </p>
         )}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
