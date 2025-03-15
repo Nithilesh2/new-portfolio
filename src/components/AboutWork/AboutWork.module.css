@@ -1,7 +1,7 @@
 .main{
   height: 90px;
   width: 250px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
   padding: 0.7rem 0 0 0;
   border-radius: 5px;
   cursor: default;

@@ -1,12 +1,12 @@
 .main {
   height: auto;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
   transition: all 0.3s linear;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--skillsBoxbg-color);
 }
 .top {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--text-color);
   padding: 15px;
   display: flex;
   align-items: center;
@@ -21,8 +21,8 @@
 }
 .top::selection,
 .bottom::selection {
-  background: #ccc;
-  color: #0d0d0d;
+  background: var(--text-color);
+  color: var(--selection-color);
 }
 @media screen and (max-width: 460px) {
   .main {

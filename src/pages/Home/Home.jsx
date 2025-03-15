@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import emailjs from "emailjs-com"
 import styles from "./Home.module.css"
 import Navbar from "../../components/Navbar/Navbar"
-import { FaGithub, FaInstagram, FaLinkedin, FaStar } from "react-icons/fa"
+import { FaChartLine, FaGithub, FaInstagram, FaLinkedin, FaStar, FaUserFriends } from "react-icons/fa"
 import { Database, Wrench, Code, Cloud, Monitor, Languages } from "lucide-react"
 import ProjectBox from "../../components/ProjectBox/ProjectBox"
 import portfolioImg from "../../assets/protfolioImg.png"
@@ -14,10 +14,11 @@ import GoToTop from "../../components/GoToTop/GoToTop"
 import SkillsBox from "../../components/SkillsBox/SkillsBox"
 import Footer from "../../components/Footer/Footer"
 import AboutWork from "../../components/AboutWork/AboutWork"
-// import { PiLightbulbBold } from "react-icons/pi"
+import { PiLightbulbBold } from "react-icons/pi"
 import { useLocation, useNavigate } from "react-router-dom"
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion"
+import { GoRepo } from "react-icons/go";
 
 const Home = () => {
   const [isSent, setIsSent] = useState(false)
@@ -78,6 +79,45 @@ const Home = () => {
     }
   }
 
+  const handleThemeChange = () => {
+    const currentTheme = localStorage.getItem("theme")
+    let newTheme
+
+    if (currentTheme === "dark") {
+      newTheme = "light"
+    } else {
+      newTheme = "dark"
+    }
+
+    applyTheme(newTheme)
+  }
+
+  const applyTheme = (theme) => {
+    document.body.classList.remove("light-mode", "dark-mode")
+
+    if (theme === "dark") {
+      document.body.classList.add("dark-mode")
+    } else if (theme === "light") {
+      document.body.classList.add("light-mode")
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches
+      if (prefersDark) {
+        document.body.classList.add("dark-mode")
+      } else {
+        document.body.classList.add("light-mode")
+      }
+    }
+
+    localStorage.setItem("theme", theme)
+  }
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "system"
+    applyTheme(savedTheme)
+  }, [])
+
   return (
     <>
       <div className={styles.social}>
@@ -103,14 +143,9 @@ const Home = () => {
               }
             />
           </div>
-          {/* <div className={styles.socialMedia4}>
-            <PiLightbulbBold
-              size={26}
-              onClick={() =>
-                handleOpen("https://www.instagram.com/_nithilesh_guptha_/")
-              }
-            />
-          </div> */}
+          <div className={styles.socialMedia4}>
+            <PiLightbulbBold size={34} onClick={() => handleThemeChange()} />
+          </div>
         </div>
       </div>
       <Navbar />
@@ -175,6 +210,8 @@ const Home = () => {
                 onClick={() => navigate("/view-projects")}
                 style={{
                   cursor: "default",
+                  fontSize: '1.2rem',
+                  fontWeight: '600'
                 }}
               >
                 view all ~~&gt;
@@ -383,21 +420,21 @@ const Home = () => {
           <div className={styles.sectionSixBottom}>
             <AboutWork
               icon={FaGithub}
-              title={2}
+              title={3}
               description="GitHub Followers"
             />
             <AboutWork
-              icon={FaStar}
+              icon={GoRepo}
               title={50}
               description="GitHub Repositories"
             />
             <AboutWork
-              icon={FaLinkedin}
+              icon={FaChartLine}
               title={1400}
               description="LinkedIn Impressions"
             />
             <AboutWork
-              icon={FaLinkedin}
+              icon={FaUserFriends}
               title={175}
               description="LinkedIn Connections"
             />

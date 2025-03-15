@@ -1,11 +1,11 @@
 .main {
   height: auto;
   width: 330px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--text-color);
   margin-top: 2rem;
 }
 .imgContainer {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--text-color);
   display: flex;
 }
 .image {
@@ -17,23 +17,23 @@
 .projectTechnologies {
   padding: 0.3rem 1rem;
   font-size: 18px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--text-color);
   line-height: 1.6rem;
-  color: white;
+  color: var(--text-color);
 }
 .projectTitle::selection,
 .projectTechnologies::selection,
 .projectDescription::selection,
 .button::selection {
-  background: #ccc;
-  color: #0d0d0d;
+  background: var(--text-color);
+  color: var(--selection-color);
 }
 .projectDescription {
   padding: 0.3rem 1rem;
   font-size: 14px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--text-color);
   line-height: 1.2rem;
-  color: rgb(176, 176, 176);
+  color: var(--textlight-color);
 }
 .buttonContainer {
   width: 100%;
@@ -47,9 +47,9 @@
 .button {
   height: 35px;
   font-size: 1rem;
-  border: 1px solid #ccc;
-  color: #ccc;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
   border-radius: 5px;
-  background-color: #1e1e1e;
+  background-color: var(--bg-color);
   padding: 0 1rem;
 }

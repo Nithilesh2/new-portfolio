@@ -1,14 +1,14 @@
 .footer {
   width: 100%;
-  background-color: #1e1e1e;
-  color: #ffffff;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
   font-size: 0.9rem;
   flex-wrap: wrap;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--text-color);
   margin-top: 1.5rem;
   cursor: default;
 }
@@ -22,7 +22,7 @@
   font-weight: bold;
 }
 .email {
-  color: #888;
+  color: var(--textlight-color);
 }
 .right {
   text-align: right;
@@ -33,12 +33,12 @@
   margin-top: 0.5rem;
 }
 .icons a {
-  color: #ccc;
+  color: var(--text-color);
   font-size: 1.6rem;
   transition: 0.3s;
 }
 .icons a:hover {
-  color: #00ff00;
+  color: var(--header-color);
 }
 .copyright {
   width: 100%;
@@ -47,8 +47,8 @@
   opacity: 0.6;
 }
 .footer::selection {
-  background: #ccc;
-  color: #0d0d0d;
+  background: var(--text-color);
+  color: var(--selection-color);
 }
 @media screen and (max-width: 500px) {
   .footer {

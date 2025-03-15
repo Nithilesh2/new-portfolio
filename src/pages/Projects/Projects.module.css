@@ -1,25 +1,29 @@
 .main {
-  background-color: #1e1e1e;
+  background-color: var(--bg-color);
   font-family: "Share Tech Mono", monospace;
   padding: 1rem 3rem 0 3rem;
   height: 100%;
   width: 100%;
   position: relative;
-  color: #ccc;
+  color: var(--text-color);
   padding-bottom: 3rem;
 }
 .one{
   font-size: 2rem;
-  color: #00ff00;
+  color: var(--header-color);
   line-height: 2rem;
 }
 .one span{
   font-size: 2rem;
-  color: #ccc;
+  color: var(--text-color);
+}
+.one span::selection, .one p::selection{
+  color: var(--bg-color);
+  background-color: var(--text-color);
 }
 .one p{
   font-size: 1rem;
-  color: #ccc;
+  color: var(--text-color);
   margin-left: 1.5rem;
 }
 .website{
@@ -38,11 +42,12 @@
 .sectionTwoParaOne {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #00ff00;
-  text-shadow: 0 0 3px #00ff00;
+  color: var(--header-color);
+  text-shadow: 0 0 3px var(--header-color);
 }
 .sectionTwoParaOne::selection {
-  color: #0d0d0d;
+  color: var(--bg-color);
+  background-color: var(--text-color);
 }
 @media screen and (max-width: 430px){
   .website{

@@ -1,8 +1,8 @@
 .main {
-  background-color: #1e1e1e;
+  background-color: var(--bg-color);
   height: 75px;
   width: 100%;
-  color: white;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   font-weight: 600;
@@ -20,7 +20,7 @@
   position: relative;
   font-size: 1.5rem;
   transition: all 0.3s linear;
-  color: #4bff4b;
+  color: var(--header-color);
 }
 .left::before,
 .left::after {
@@ -82,24 +82,24 @@
   background: none;
 }
 .navData:hover {
-  color: #00ff00;
-  text-shadow: 0 0 5px #00ff00;
-  filter: drop-shadow(5px 0px 15px #00ff00) drop-shadow(-5px 0px 15px #00ff00);
+  color: var(--header-color);
+  text-shadow: 0 0 5px var(--header-color);
+  filter: drop-shadow(5px 0px 15px var(--header-color)) drop-shadow(-5px 0px 15px var(--header-color));
 }
 .hamburger {
   display: none;
   background: transparent;
-  border: 2px solid #00ff00;
+  border: 2px solid var(--header-color);
   border-radius: 10px;
-  color: #00ff00;
+  color: var(--header-color);
   padding: 5px 8px;
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s linear;
 }
 .hamburger:hover {
-  background: #00ff00;
-  color: black;
+  background: var(--header-color);
+  color: var(--selection-color);
 }
 @media screen and (max-width: 868px) {
   .main {
@@ -116,7 +116,7 @@
     top: -100vh;
     left: 0;
     width: 100%;
-    background: #1e1e1e;
+    background: var(--bg-color);
     flex-direction: column;
     padding: 20px 0;
     height: 100dvh;
@@ -135,7 +135,7 @@
   }
   .hamburger:hover {
     background: transparent;
-    color: #00ff00;
+    color: var(--header-color);
   }
 }
 @media screen and (max-width: 368px) {
