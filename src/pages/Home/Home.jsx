@@ -175,6 +175,8 @@ const Home = () => {
                 onClick={() => navigate("/view-projects")}
                 style={{
                   cursor: "default",
+                  fontSize: '1.4rem',
+                  fontWeight: '600'
                 }}
               >
                 view all ~~&gt;
