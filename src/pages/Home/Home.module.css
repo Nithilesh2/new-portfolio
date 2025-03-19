@@ -76,11 +76,12 @@
   background-color: var(--text-color);
   color: var(--selection-color);
 }
-.socialMedia4{
+.socialMedia4 {
   bottom: -125px;
   rotate: 180deg;
   color: var(--text-color);
   left: 5px;
+  font-size: 2rem;
 }
 .sectionOne {
   display: flex;
@@ -482,7 +483,8 @@
   }
   .socialMedia1,
   .socialMedia2,
-  .socialMedia3 {
+  .socialMedia3,
+  .socialMedia4 {
     border: none;
     background: transparent;
     color: var(--text-color);
@@ -500,6 +502,11 @@
   .socialMedia3 {
     bottom: -75px;
     left: 0px;
+  }
+  .socialMedia4 {
+    left: 0;
+    bottom: -110px;
+    font-size: 4rem;
   }
   .sectionThreeRight {
     display: flex;

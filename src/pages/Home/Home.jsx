@@ -144,7 +144,7 @@ const Home = () => {
             />
           </div>
           <div className={styles.socialMedia4}>
-            <PiLightbulbBold size={34} onClick={() => handleThemeChange()} />
+            <PiLightbulbBold onClick={() => handleThemeChange()} />
           </div>
         </div>
       </div>
