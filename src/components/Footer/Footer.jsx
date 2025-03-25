@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className={styles.copyright}>© Copyright 2025. Made by Nithilesh</p>
+      <p className={styles.copyright}>© Copyright 2025. Made by Nithilesh Bejagam</p>
     </footer>
   )
 }
