@@ -50,6 +50,9 @@
   background: var(--text-color);
   color: var(--selection-color);
 }
+.role{
+  width: 100%;
+}
 @media screen and (max-width: 500px) {
   .footer {
     flex-direction: column;
@@ -72,5 +75,8 @@
   .icons {
     gap: 1.5rem;
     margin-top: 0.8rem;
+  }
+  .role{
+    text-align: center;
   }
 }

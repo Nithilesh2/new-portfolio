@@ -8,7 +8,7 @@ const Footer = () => {
       <div className={styles.left}>
         <h3 className={styles.name}>Bejagam Nithilesh</h3>
         <p className={styles.email}>sunnybnithilesh@gmail.com</p>
-        <p className={styles.role}>Web Developer & App Developer</p>
+        <p className={styles.role}>Web, Mobile & Desktop Application Developer</p>
       </div>
 
       <div className={styles.right}>

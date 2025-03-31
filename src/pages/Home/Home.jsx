@@ -425,22 +425,22 @@ const Home = () => {
             />
             <AboutWork
               icon={GoRepo}
-              title={50}
+              title={57}
               description="GitHub Repositories"
             />
             <AboutWork
               icon={FaChartLine}
-              title={1400}
+              title={2971}
               description="LinkedIn Impressions"
             />
             <AboutWork
               icon={FaUserFriends}
-              title={175}
+              title={191}
               description="LinkedIn Connections"
             />
             <AboutWork
               icon={FaInstagram}
-              title={300}
+              title={316}
               description="Instagram Followers"
             />
           </div>
