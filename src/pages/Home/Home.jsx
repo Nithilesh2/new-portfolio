@@ -2,7 +2,14 @@ import React, { useEffect, useRef, useState } from "react"
 import emailjs from "emailjs-com"
 import styles from "./Home.module.css"
 import Navbar from "../../components/Navbar/Navbar"
-import { FaChartLine, FaGithub, FaInstagram, FaLinkedin, FaStar, FaUserFriends } from "react-icons/fa"
+import {
+  FaChartLine,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaStar,
+  FaUserFriends,
+} from "react-icons/fa"
 import { Database, Wrench, Code, Cloud, Monitor, Languages } from "lucide-react"
 import ProjectBox from "../../components/ProjectBox/ProjectBox"
 import portfolioImg from "../../assets/protfolioImg.png"
@@ -18,7 +25,7 @@ import { PiLightbulbBold } from "react-icons/pi"
 import { useLocation, useNavigate } from "react-router-dom"
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion"
-import { GoRepo } from "react-icons/go";
+import { GoRepo } from "react-icons/go"
 
 const Home = () => {
   const [isSent, setIsSent] = useState(false)
@@ -172,11 +179,13 @@ const Home = () => {
                 I specialize in{" "}
                 <span className={styles.highlight}>React.js</span> for
                 interactive web apps and{" "}
-                <span className={styles.highlight}>React Native </span>
-                for seamless cross-platform mobile experiences. I focus on
-                <span className={styles.highlight}> responsive</span>,
-                performance and integrating the latest tech for better user
-                engagement.
+                <span className={styles.highlight}>React Native</span> for
+                seamless cross-platform mobile experiences. I focus on{" "}
+                <span className={styles.highlight}>responsive</span>,
+                performance, and integrating the latest tech for better user
+                engagement. I've also started working with{" "}
+                <span className={styles.highlight}>Electron.js</span> to build
+                powerful desktop applications.
               </p>
             </span>
             <span className={styles.right}>
@@ -210,8 +219,8 @@ const Home = () => {
                 onClick={() => navigate("/view-projects")}
                 style={{
                   cursor: "default",
-                  fontSize: '1.2rem',
-                  fontWeight: '600'
+                  fontSize: "1.2rem",
+                  fontWeight: "600",
                 }}
               >
                 view all ~~&gt;
@@ -268,7 +277,7 @@ const Home = () => {
           transition={{ duration: 1.4 }}
           viewport={{ once: false }}
           id="skills"
-          className={styles.sectionThree}
+          className={`${styles.sectionThree} ${styles.autoBlur}`}
         >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
@@ -332,7 +341,7 @@ const Home = () => {
           transition={{ duration: 1.4 }}
           viewport={{ once: false }}
           id="aboutMe"
-          className={styles.sectionFour}
+          className={`${styles.sectionFour} ${styles.autoBlur}`}
         >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
@@ -408,7 +417,7 @@ const Home = () => {
           transition={{ duration: 1.4 }}
           viewport={{ once: false }}
           id="communtiy"
-          className={styles.sectionFour}
+          className={`${styles.sectionFour} ${styles.autoBlur}`}
         >
           <div className={styles.content}>
             <span className={styles.sectionTwoTop}>
@@ -452,7 +461,7 @@ const Home = () => {
           transition={{ duration: 1.4 }}
           viewport={{ once: false }}
           id="contact"
-          className={styles.sectionFive}
+          className={`${styles.sectionFive} ${styles.autoBlur}`}
         >
           <div
             className={styles.content}

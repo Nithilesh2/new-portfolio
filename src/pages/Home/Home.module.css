@@ -402,6 +402,26 @@
   gap: 1.5rem;
   padding: 1rem 0 0 3rem;
 }
+.autoBlur{
+  animation: autoBlurEffect linear both;
+  animation-timeline: view(1%);
+}
+
+@keyframes autoBlurEffect{
+  0% {
+    filter: blur(40px);
+  }
+  40%, 60%{
+    filter: blur(0px);
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  100% {
+    filter: blur(40px);
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
 
 @media screen and (max-width: 960px) {
   .glitchImg {
